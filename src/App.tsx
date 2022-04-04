@@ -1,5 +1,5 @@
 import React from 'react';
-import Catalog from './utils/components/Catalog/Catalog';
+import Catalog from './pages/Catalog';
 
 function App() {
   return (

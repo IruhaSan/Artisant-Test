@@ -2,22 +2,32 @@ import axios, { AxiosResponse } from "axios"
 
 type RequestWrapper<T> = {
     status: string;
-    data: T
+    data: T;
 }
+
+type ProductAuthor = {
+    user_id: number;
+    display_name: string;
+    public_address: string;
+    custom_url: string;
+    image: {
+        original: string;
+        compressed: string;
+    }
+}; 
 
 export type Product = {
     product_id: number;
     name: string;
     quantity: number;
     initial_price: number;
-    createdBy: {
-        display_name: string;
-    }
+    created_by: ProductAuthor;
     avatar: {
         original: string;
         compressed: string;
     }
     quantity_available: number;
+    quantity_nfts_created: number;
 }
 
 
