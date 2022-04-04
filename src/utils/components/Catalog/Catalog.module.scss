@@ -1,0 +1,10 @@
+@import 'src/assets/styles/variables.scss';
+@import 'src/assets/styles/mixins.scss';
+
+@include media-full-hd {
+  @import './styles/full-hd.scss';
+}
+
+@include media-mobile {
+  @import './styles/media-mobile.scss';
+}

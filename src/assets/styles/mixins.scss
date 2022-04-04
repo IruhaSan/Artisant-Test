@@ -1,0 +1,80 @@
+@mixin edge_check {
+  @supports (-ms-ime-align:auto) {
+    @content;
+  }
+}
+
+@mixin hover {
+  &:active {
+    @content;
+  }
+
+  :global(.noDevice) &:hover {
+    @content;
+  }
+}
+
+// media queries
+@mixin media-mobile {
+  @media (max-width: $mobile-width) {
+    @content;
+  }
+}
+
+@mixin media-mobile-xl {
+  @media (max-width: $mobile-xl-width) {
+    @content;
+  }
+}
+
+@mixin media-portrait {
+  @media (max-width: $portrait-width) {
+    @content;
+  }
+}
+
+@mixin media-landscape {
+  @media (max-width: $landscape-width) {
+    @content;
+  }
+}
+
+@mixin media-landscape-portrait {
+  @media (max-width: $landscape-width) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin media-desktop {
+  @media (max-width: $desktop-width) {
+    @content;
+  }
+}
+
+@mixin media-desktop-xl {
+  @media (max-width: $desktop-xl-width) {
+    @content;
+  }
+}
+
+@mixin media-hd {
+  @media (max-width: $hd-width) {
+    @content;
+  }
+}
+
+@mixin media-full-hd {
+  @content;
+}
+
+@mixin media-between($min-width, $max-width) {
+  @media (min-width: $min-width) and (max-width: $max-width) {
+    @content;
+  }
+}
+
+@mixin media-safari {
+  @media not all and (min-resolution: 0.001dpcm) {
+    @content;
+  }
+}
