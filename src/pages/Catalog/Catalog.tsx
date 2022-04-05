@@ -3,6 +3,7 @@ import { getProducts, Product } from '../../api/products';
 import Container from '../../utils/components/Container';
 import classes from './Catalog.module.scss';
 import ProductCard from '../../components/ProductCard';
+import clsx from 'clsx';
 
 const Catalog: FC = () => {
   const [allProductList, setAllProductList] = useState<Product[]>([]);
@@ -37,9 +38,20 @@ const Catalog: FC = () => {
   return (
     <Container className={classes.root}>
       <div className={classes.title}>
-        <button onClick={() => setAvailableFilterActiveState(!isAvalaibleFilterActive)}>Show Available</button>
-        <h1>Explore</h1>
-        <h2>Buy and sell digital fashion NFT art</h2>
+        <div className={classes['title-text']}>
+          <h1>Explore</h1>
+          <h2>Buy and sell digital fashion NFT art</h2>
+        </div>
+        <div className={classes['title-filter']}>
+          <span>Filter by availability</span>
+          <div 
+            onClick={() => setAvailableFilterActiveState(!isAvalaibleFilterActive)} 
+            className={clsx(
+              classes['title-filter__checkbox'], 
+              isAvalaibleFilterActive && classes['title-filter__checkbox-isChecked']
+            )} 
+          />
+        </div>
       </div>
       <div className={classes.products}>
         {
