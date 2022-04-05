@@ -1,0 +1,34 @@
+.root {
+    flex-direction: column;
+    align-items: center;
+}   
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 24px;
+    &-filter {
+        width: 100%;
+        display: flex;
+        padding-right: 0px;
+        padding-bottom: 15px;
+        justify-content: flex-start;
+        &__checkbox {
+            margin-right: 10px;
+        }
+    }
+    &-text {
+        & > h1 {
+            margin-bottom: 16px;
+        }
+        & > h2 {
+            margin-bottom: 24px;
+        }
+    }
+}
+
+.products {
+    flex-wrap: wrap;
+    flex-direction: column;
+}

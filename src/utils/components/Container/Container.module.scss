@@ -5,6 +5,6 @@
   @import './styles/full-hd';
 }
 
-@include media-mobile {
-  @import './styles/media-mobile.scss';
+@include media-mobile-xl {
+  @import './styles/mobile-xl.scss';
 }

@@ -22,7 +22,7 @@ const Catalog: FC = () => {
   
   const memoProductList = useMemo(() => {
     const productList = !isAvalaibleFilterActive ? allProductList : memoAvailableProductList;
-    return productList.slice(0, page * 12);
+    return productList.slice(0, page * 10);
   }, [isAvalaibleFilterActive, allProductList, memoAvailableProductList, page])
   
   useEffect(() => {
@@ -43,7 +43,6 @@ const Catalog: FC = () => {
           <h2>Buy and sell digital fashion NFT art</h2>
         </div>
         <div className={classes['title-filter']}>
-          <span>Filter by availability</span>
           <div 
             onClick={() => setAvailableFilterActiveState(!isAvalaibleFilterActive)} 
             className={clsx(
@@ -51,6 +50,7 @@ const Catalog: FC = () => {
               isAvalaibleFilterActive && classes['title-filter__checkbox-isChecked']
             )} 
           />
+          <span>Filter by availability</span>
         </div>
       </div>
       <div className={classes.products}>
